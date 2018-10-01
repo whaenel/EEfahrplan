@@ -45,7 +45,13 @@ public class FpnServlet extends HttpServlet {
 		}
 		request.setAttribute("pMap", pMap);
 		
-		String nextJSP = "/NewFile.jsp";
+		Fahrt[] fahrten = new Fahrt[3];
+		fahrten[0] = new Fahrt("S1", "Herrenberg", "11","34");
+		fahrten[1] = new Fahrt("S60", "Böblingen", "11","37");
+		fahrten[2] = new Fahrt("S1", "Kirchheim", "11","44");
+		request.setAttribute(Fahrt.attributName, fahrten);
+		
+		String nextJSP = "/Fahrplan.jsp";
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		dispatcher.forward(request,response);
 	}

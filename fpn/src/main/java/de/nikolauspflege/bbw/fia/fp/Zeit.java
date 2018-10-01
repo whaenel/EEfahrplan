@@ -5,6 +5,10 @@ import java.time.format.DateTimeFormatter;
 
 public class Zeit {
 	LocalTime zeit;
+	
+	Zeit(){
+		zeit=LocalTime.now();
+	}
 	Zeit(int hour, int minute ){
 		zeit = LocalTime.of(hour, minute,0);
 	}

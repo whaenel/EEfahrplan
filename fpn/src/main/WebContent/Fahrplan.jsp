@@ -29,12 +29,16 @@
 <h1>Fahrplan</h1>
 		<div class=haltestelle>
 Haltestelle 
+<%
+String haltestelle = (String) request.getAttribute("haltestelle");
+
+ %>
 		<select name="haltestelle" class=haltestelle>
 
-  <option value="stadtmitte">Stadtmitte</option>
-  <option value="nikolauspflege">Nikolauspflege, Kräherwald</option>
-  <option value="carre">Carre</option>
-</select> <br>
+  <option <%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%> value="stadtmitte">Stadtmitte</option>
+  <option <%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%> value="nikolauspflege">Nikolauspflege, Kräherwald</option>
+  <option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%> value="carre">Carre</option>
+</select> <br><br>Zeit: <%=request.getAttribute("uhrzeit")%><br><br>
 		</div>
 		<table class=mytab>
 <tr class=toprow><td class=toprow>Linie</td><td class=toprow>Ziel</td><td class=toprow>Zeit</td></tr>
@@ -58,5 +62,22 @@ if (request.getAttribute(Fahrt.attributName) instanceof Fahrt[]) {
 		<br>
 <input type="submit" value="Submit" >
 </form>
+
+<h1>Debug Info</h1>
+<h3>Available Request Parameters</h3>
+		<table class=mytab>
+<tr class=toprow><td class=toprow>Name</td><td class=toprow>Value</td></tr>
+
+<%
+Map<?,?> pMap = null;
+if (request.getAttribute("pMap") instanceof Map<?,?>) {
+  	pMap = (Map<?,?>) request.getAttribute("pMap");
+  	
+	for (Entry<?,?> entry:  pMap.entrySet())  { %>
+		<tr><td class=center><%= entry.getKey() %></td><td class=center ><%= entry.getValue() %></td></tr>
+
+	<%} 
+	}%>
+</table>
 </body>
 </html>

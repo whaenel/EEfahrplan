@@ -24,6 +24,7 @@
 }
 ;
 </style>
+<title>Fahrplan</title>
 </head>
 <body>
 	<img alt="tomcat icon" src="tomcat-power.gif">

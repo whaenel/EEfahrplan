@@ -10,9 +10,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("integration")
-class SimpleIT {
+import net.sourceforge.jwebunit.junit.WebTester;
 
+@Tag("integration")
+class SimpleJWebUnit {
+	private WebTester tester;
+	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 	}
@@ -23,7 +26,9 @@ class SimpleIT {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		setBaseUrl("http://localhost:9000/fpn");
+        tester = new WebTester();
+        tester.setBaseUrl("http://localhost:9000/fpn");
+
 	}
 
 	@AfterEach
@@ -32,9 +37,9 @@ class SimpleIT {
 
 	@Test
 	void testIndexJSP() {
-        beginAt("/");
+        tester.beginAt("/");
         //clickLink("login");
-        assertTitleEquals("Fahrplan");
+        tester.assertTitleEquals("Fahrplan");
         //setTextField("username", "test");
         //setTextField("password", "test123");
         //submit();

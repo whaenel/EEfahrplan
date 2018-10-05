@@ -35,9 +35,9 @@ String haltestelle = (String) request.getAttribute("haltestelle");
  %>
 		<select name="haltestelle" class=haltestelle>
 
-  <option <%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%> value="stadtmitte">Stadtmitte</option>
-  <option <%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%> value="nikolauspflege">Nikolauspflege, Kräherwald</option>
-  <option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%> value="carre">Carre</option>
+  <option <%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%> value="stadtmitte" id="optionStadtmitte">Stadtmitte</option>
+  <option <%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%> value="nikolauspflege" id="optionNikolauspflege">Nikolauspflege, Kräherwald</option>
+  <option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%> value="carre" id="optionCarre">Carre</option>
 </select> <br><br>Zeit: <%=request.getAttribute("uhrzeit")%><br><br>
 		</div>
 		<table class=mytab>

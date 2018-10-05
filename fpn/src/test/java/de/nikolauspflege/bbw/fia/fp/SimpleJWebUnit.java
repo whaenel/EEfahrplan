@@ -1,7 +1,7 @@
 package de.nikolauspflege.bbw.fia.fp;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static net.sourceforge.jwebunit.junit.JWebUnit.*;
+import net.sourceforge.jwebunit.junit.JWebUnit.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 
 import net.sourceforge.jwebunit.junit.WebTester;
 
@@ -26,7 +28,8 @@ class SimpleJWebUnit {
 
 	@BeforeEach
 	void setUp() throws Exception {
-        tester = new WebTester();
+		BrowserVersion myBrowserVersion = BrowserVersion.BEST_SUPPORTED;
+        tester = new WebTester()  ;
         tester.setBaseUrl("http://localhost:9000/fpn");
 
 	}

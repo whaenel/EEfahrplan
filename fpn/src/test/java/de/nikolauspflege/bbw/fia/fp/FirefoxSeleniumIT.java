@@ -13,7 +13,12 @@ import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.internal.MouseAction.Button;
+import org.openqa.selenium.support.ui.Select;
+
+import com.gargoylesoftware.htmlunit.javascript.host.html.Option;
 
 import io.github.bonigarcia.SeleniumExtension;
 import io.github.bonigarcia.SeleniumJupiter;
@@ -48,6 +53,10 @@ class FirefoxSeleniumIT {
 	        driver.get("http://localhost:9000/fpn");
 	        assertThat(driver.getTitle(),
 	                containsString("Fahrplan"));
+		      Select stationSelect  =   new Select(driver.findElementById("myselect"));
+		      stationSelect.selectByValue("nikolauspflege");
+	       driver.findElementById("submitButton").click();
+	      assertTrue(driver.findElementById("optionNikolauspflege").isSelected());
 	    }
 
 }

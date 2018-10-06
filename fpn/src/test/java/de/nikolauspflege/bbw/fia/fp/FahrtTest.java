@@ -13,7 +13,7 @@ class FahrtTest {
 		String lineString = "S2";
 		Linie line = new Linie(lineString);
 		testFahrt.setLinie(line);
-		assertTrue (line == testFahrt.getLinie());
+		assertEquals ("S2", testFahrt.getLinie().toString());
 	}
 
 	@Test

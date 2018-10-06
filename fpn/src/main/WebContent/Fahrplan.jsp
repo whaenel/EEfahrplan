@@ -6,6 +6,7 @@
 <%@ page import="de.nikolauspflege.bbw.fia.fp.Zeit" %>
 <%@ page import="de.nikolauspflege.bbw.fia.fp.Linie" %>
 <%@ page import="de.nikolauspflege.bbw.fia.fp.Ziel" %>
+<%@ page import="de.nikolauspflege.bbw.fia.fp.Tafel" %>
 
     
 <!DOCTYPE html>
@@ -30,7 +31,14 @@
 		<div class=haltestelle>
 Haltestelle 
 <%
-String haltestelle = (String) request.getAttribute("haltestelle");
+Tafel tafel =null;
+Fahrt[] fahrten = null;
+if (request.getAttribute(Fahrt.attributName) instanceof Tafel) {
+  	tafel  = (Tafel) request.getAttribute(Fahrt.attributName);
+  	fahrten  = tafel.getFahrten();
+}
+
+String haltestelle = tafel.getHaltestelle();
 
  %>
 		<select name="haltestelle" class=haltestelle>
@@ -38,23 +46,19 @@ String haltestelle = (String) request.getAttribute("haltestelle");
   <option <%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%> value="stadtmitte" id="optionStadtmitte">Stadtmitte</option>
   <option <%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%> value="nikolauspflege" id="optionNikolauspflege">Nikolauspflege, Kräherwald</option>
   <option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%> value="carre" id="optionCarre">Carre</option>
-</select> <br><br>Zeit: <%=request.getAttribute("uhrzeit")%><br><br>
+</select> <br><br>Zeit: <%=tafel.getZeitAsString()%><br><br>
 		</div>
 		<table class=mytab>
 <tr class=toprow><td class=toprow>Linie</td><td class=toprow>Ziel</td><td class=toprow>Zeit</td></tr>
 
 <%
-Fahrt[] fahrten = null;
-if (request.getAttribute(Fahrt.attributName) instanceof Fahrt[]) {
-  	fahrten  = (Fahrt[]) request.getAttribute(Fahrt.attributName);
-  	if (fahrten != null) {
+if (fahrten != null) {
   	
-  	    for (int i =0; i< fahrten.length; i++){  
+  	for (int i =0; i< fahrten.length; i++){  
 %>
   	<tr><td class=center><%=fahrten[i].getLinie().toString()%></td><td class=center ><%=fahrten[i].getZiel().toString()%></td> <td class=center ><%=fahrten[i].getZeit().toString()%></td></tr>
   	   
 <%  
-		}
 	}
 }
 %>

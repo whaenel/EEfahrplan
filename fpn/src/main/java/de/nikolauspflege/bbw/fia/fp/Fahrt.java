@@ -36,4 +36,7 @@ public class Fahrt {
 		this.zeit = zeit;
 	}
 
+	public String toString() {
+		return linie.toString()+"   \t"+ziel.toString()+"   \t"+zeit.toString();
+	}
 }

@@ -15,13 +15,10 @@
 <meta charset="UTF-8">
 <title>NewFile</title>
 <style type="text/css">
-.center {
-    text-align: center;
-    color: red;
-};
+.center {    text-align: center;  color: red };
 .toprow { border-style: solid; background-color: green };
-.mytab{width: 500px;  border-style: solid;border-color: red;};
-.haltestelle {font-size: large;};
+.mytab{width: 500px;  border-style: solid;border-color: red};
+.haltestelle {font-size: large};
 </style>
 </head>
 <body>
@@ -44,13 +41,13 @@ if (request.getAttribute(Fahrt.attributName) instanceof Tafel) {
 			<select name="haltestelle" class=haltestelle title="Haltestelle">
 
 				<option
-					<%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%>
+					<%=("stadtmitte".equalsIgnoreCase(haltestelle))? "selected": ""%>
 					value="stadtmitte" id="optionStadtmitte">Stadtmitte</option>
 				<option
-					<%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%>
+					<%=("nikolauspflege".equalsIgnoreCase(haltestelle))? "selected": ""%>
 					value="nikolauspflege" id="optionNikolauspflege">Nikolauspflege,
 					Kräherwald</option>
-				<option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%>
+				<option <%=("carre".equalsIgnoreCase(haltestelle))? "selected": ""%>
 					value="carre" id="optionCarre">Carre</option>
 			</select> <br><br>Zeit: <%=tafel.getZeitAsString()%><br><br>
 		</div>

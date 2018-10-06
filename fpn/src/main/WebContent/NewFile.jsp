@@ -17,19 +17,22 @@
 .toprow { border-style: solid; background-color: green };
 .mytab{width: 500px;  border-style: solid;
     border-color: red;};
-
+.haltestelle {font-size: 20 px;};
 </style>
 </head>
 <body>
 	<form action="./FpnServlet" method="post"> 
-<h1>New File JSP</h1>
- <select name="cars">
+<h1>Fahrplan</h1>
+		<div class=haltestelle>
+
+		<select name="cars">
+
   <option value="volvo">Volvo</option>
   <option value="saab">Saab</option>
   <option value="fiat">Fiat</option>
   <option value="audi">Audi</option>
 </select>
-
+		</div>
 		<table class=mytab>
 <tr class=toprow><td class=toprow>Name</td><td class=toprow>Value</td></tr>
 

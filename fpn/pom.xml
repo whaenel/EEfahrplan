@@ -54,9 +54,9 @@
 					<release>${java.version}</release>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
-					<excludes>
-						<exclude>**/AllTests.java</exclude>
-					</excludes>
+					<testExcludes>
+						<testExclude>**/de/nikolauspflege/bbw/fia/fp/AllTests.java</testExclude>
+					</testExcludes>
 
 				</configuration>
 			</plugin>

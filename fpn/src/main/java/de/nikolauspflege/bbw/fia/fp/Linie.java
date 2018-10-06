@@ -1,7 +1,7 @@
 package de.nikolauspflege.bbw.fia.fp;
 
 public class Linie {
-	String name;
+	private final String name;
 	
 	Linie(String name ){
 		this.name = name;

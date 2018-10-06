@@ -1,7 +1,7 @@
 package de.nikolauspflege.bbw.fia.fp;
 
 public class Ziel {
-	public String name;
+	private final String name;
 	
 	public Ziel(String name){
 		this.name = name;

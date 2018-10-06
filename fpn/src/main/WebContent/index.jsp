@@ -1,24 +1,7 @@
 <html>
 <head>
 <style type="text/css">
-.center {
-	text-align: center;
-	color: red;
-}
 
-.toprow {
-	border-style: solid;
-	background-color: green
-}
-
-;
-.mytab {
-	width: 500px;
-	border-style: solid;
-	border-color: red;
-}
-
-;
 .haltestelle {
 	font-size: large;
 }

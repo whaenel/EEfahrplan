@@ -3,9 +3,9 @@ package de.nikolauspflege.bbw.fia.fp;
 public class Fahrt {
 	public static String attributName = "fahrten";
 	
-	public Linie linie;
-	public Ziel ziel;
-	public Zeit zeit;
+	private  Linie linie;
+	private Ziel ziel;
+	private Zeit zeit;
 	
 	public Fahrt(String linie , String endhaltestelle, String stunden, String minuten){
 		this.linie = new Linie ( linie);

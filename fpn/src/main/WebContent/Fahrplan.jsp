@@ -18,10 +18,9 @@
 .center {
     text-align: center;
     color: red;
-}
+};
 .toprow { border-style: solid; background-color: green };
-.mytab{width: 500px;  border-style: solid;
-    border-color: red;};
+.mytab{width: 500px;  border-style: solid;border-color: red;};
 .haltestelle {font-size: large;};
 </style>
 </head>
@@ -33,20 +32,27 @@ Haltestelle
 <%
 Tafel tafel =null;
 Fahrt[] fahrten = null;
+String haltestelle= null;
 if (request.getAttribute(Fahrt.attributName) instanceof Tafel) {
   	tafel  = (Tafel) request.getAttribute(Fahrt.attributName);
   	fahrten  = tafel.getFahrten();
+  	haltestelle = tafel.getHaltestelle();
 }
 
-String haltestelle = tafel.getHaltestelle();
 
  %>
-		<select name="haltestelle" class=haltestelle>
+			<select name="haltestelle" class=haltestelle title="Haltestelle">
 
-  <option <%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%> value="stadtmitte" id="optionStadtmitte">Stadtmitte</option>
-  <option <%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%> value="nikolauspflege" id="optionNikolauspflege">Nikolauspflege, Kräherwald</option>
-  <option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%> value="carre" id="optionCarre">Carre</option>
-</select> <br><br>Zeit: <%=tafel.getZeitAsString()%><br><br>
+				<option
+					<%=(haltestelle.equalsIgnoreCase("stadtmitte"))? "selected": ""%>
+					value="stadtmitte" id="optionStadtmitte">Stadtmitte</option>
+				<option
+					<%=(haltestelle.equalsIgnoreCase("nikolauspflege"))? "selected": ""%>
+					value="nikolauspflege" id="optionNikolauspflege">Nikolauspflege,
+					Kräherwald</option>
+				<option <%=(haltestelle.equalsIgnoreCase("carre"))? "selected": ""%>
+					value="carre" id="optionCarre">Carre</option>
+			</select> <br><br>Zeit: <%=tafel.getZeitAsString()%><br><br>
 		</div>
 		<table class=mytab>
 <tr class=toprow><td class=toprow>Linie</td><td class=toprow>Ziel</td><td class=toprow>Zeit</td></tr>

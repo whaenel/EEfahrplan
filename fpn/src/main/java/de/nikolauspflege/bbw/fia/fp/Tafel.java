@@ -3,9 +3,9 @@ package de.nikolauspflege.bbw.fia.fp;
 public class Tafel {
 
 
-	Fahrt[] fahrten;
-	Zeit zeit ;
-	String haltestelle;
+	private final Fahrt[] fahrten;
+	private final Zeit zeit ;
+	private final String haltestelle;
 
 	
 	Tafel(String haltestelle){

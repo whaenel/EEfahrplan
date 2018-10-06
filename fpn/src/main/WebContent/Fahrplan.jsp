@@ -15,10 +15,10 @@
 <meta charset="UTF-8">
 <title>NewFile</title>
 <style type="text/css">
-.center {    text-align: center;  color: red };
-.toprow { border-style: solid; background-color: green };
-.mytab{width: 500px;  border-style: solid;border-color: red};
-.haltestelle {font-size: large};
+.center {    text-align: center;  color: red }
+.toprow { border-style: solid; background-color: green }
+.mytab{width: 500px;  border-style: solid;border-color: red}
+.haltestelle {font-size: large}
 </style>
 </head>
 <body>

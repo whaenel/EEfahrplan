@@ -2,7 +2,7 @@
 <head>
 <style type="text/css">
 
-.haltestelle {	font-size: large };
+.haltestelle {	font-size: large }
 </style>
 <title>Fahrplan</title>
 </head>
